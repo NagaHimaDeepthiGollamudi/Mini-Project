@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Hotel Recommendation System
+        </title>
+        <style>
+            .input{
+                width: 200px;
+                border-radius: 5px;
+            }
+            #search{
+                text-decoration: none;
+                background-color: rgb(4, 73, 72);
+                padding: 7px;
+                border-radius: 15px;
+                border: none;
+                color: rgb(255, 255, 255);
+            }
+            #search:hover{
+                color: rgb(0, 0, 0);
+                background-color:rgb(88, 185, 211);
+            }
+        </style>
+    </head>
+    <body style="margin: 30px;padding: 50px;background: url('../static/landingpage.jpg');font-size: 20px;">
+        <div style="background-color: rgba(255,255,255,0.7); padding: 20px; border-radius: 30px;">
+        <form style="display: flex; justify-content: center; align-items: center;flex-direction: column;" method="POST" action="/recommend">
+            <label for="guests">No. of guests</label><br>
+            <input class="input" type="number" name="guest" id="guests" placeholder="Enter no. of guests" min="1" max="5"><br>
+            <label for="Location">Location</label><br>
+            <input class="input" type="text" name="location" id="Location" placeholder="Enter location"><br>
+            <label for="Budget">Budget($/day)</label><br>
+            <input class="input" type="number" id="Budget" name="Budget" placeholder="Enter budget" min="1"><br>
+            <label for="amenities">Describe the type of room (Enter needed amenities)</label><br>
+            <textarea style="font-size: 20px;border-radius: 10px;" name="amenities" id="amenities" cols="60" rows="7" placeholder="Enter amenities"></textarea><br>
+            <input id="search" type="submit" value="Search hotels">
+        </form>
+        </div>
+    </body>
+</html>
